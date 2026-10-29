@@ -19,6 +19,13 @@ CORS_ALLOWED_ORIGINS = [
     "https://ill-frontend.onrender.com",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://ill-frontend.onrender.com",
+]
+
+# Render terminates TLS at its proxy and forwards plain HTTP to gunicorn
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
